@@ -18,6 +18,10 @@ app.use(cors({origin: '*'})); //For FCC testing purposes only
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+process.env.PORT=3000
+
+
+
 //Index page (static HTML)
 app.route('/')
   .get(function (req, res) {
@@ -37,9 +41,10 @@ app.use(function(req, res, next) {
     .send('Not Found');
 });
 
+
 //Start our server and tests!
 app.listen(process.env.PORT || 3000, function () {
-  console.log("Listening on port " + process.env.PORT);
+  console.log("Listening on port : " + process.env.PORT);
   if(process.env.NODE_ENV==='test') {
     console.log('Running Tests...');
     setTimeout(function () {
