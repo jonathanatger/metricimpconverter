@@ -78,7 +78,7 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result;
+    var result = initNum.toString() + ' ' + initUnit.toString() +' converts to '+returnNum.toFixed(5).toString()+' '+returnUnit.toString()
     
     return result;
   };
